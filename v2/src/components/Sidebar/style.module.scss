@@ -1,0 +1,67 @@
+.sidebar { 
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    gap:2rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 6.25rem 1.5rem;
+    position: relative;
+    transition: width 0.3s ease-in-out;
+    overflow-y: auto;
+    width: 20rem;
+    .logo {
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .sidebarActionButton {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        svg {
+            font-size: 2rem;
+        }
+    }
+    .searchDrugContainer {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        position: relative;
+        height: 2rem;
+        input {
+            height: 100%;
+            width: 100%;
+            min-height: 2.375rem;
+            border-radius: 4px;
+            padding-right: 1rem;
+            padding-left: 44px;
+            border: 1px solid #889193;
+            &:focus {
+                border: 1px solid #889193;
+                outline: none!important;
+                box-shadow: none !important;        
+            }
+        }
+        .searchDrugIcon {
+            height: 100%;
+            width: 43px;
+            padding: 2px 6px;
+            position: absolute;
+            left: 0;
+            color: black ;
+            opacity: 0.7;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    }
+}   
+
+
+  .visible {
+    display: flex;
+  }
+
+  .hidden {
+    display: none;
+  }

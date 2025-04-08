@@ -1,0 +1,122 @@
+.drugItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .drugInfoContainer {
+    padding: 22px 13px;
+    display: flex;
+    background-color: #F9F9F9;
+    flex-direction: column;
+    gap: 1rem;
+
+    .drugImage {
+      position: relative;
+      width: fit-content;
+
+      .removeImageIcon {
+        cursor: pointer;
+        display: none;
+        position: absolute;
+        top: -10px;
+        left: 78%;
+      }
+
+      img {
+        width: 80%;
+        height: auto;
+      }
+
+      &:hover {
+        .removeImageIcon {
+          display: block;
+        }
+      }
+    }
+
+    .drugInfo {
+      display: flex;
+      gap: 0.5rem;
+      position: relative;
+      flex-wrap: wrap;
+
+        .drugTextPrint {
+          white-space: pre-wrap !important;
+          word-break: break-word !important;
+          overflow: hidden !important;
+          position: absolute;
+          visibility: hidden;
+          white-space: pre;
+          max-width: 100%;
+          &::first-line {
+            font-weight: bold;
+          }
+        }
+
+      .drugTextWrapper {
+        flex: 1;
+
+        .drugText {
+          resize: none;
+          border: none;
+          outline: none;
+          background: transparent;
+          font-size: 1rem;
+          font-family: inherit;
+          max-width: 100%;
+          overflow: hidden;
+          white-space: pre-wrap;
+
+          &::first-line {
+            font-weight: bold;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .drugDrag {
+        position: absolute;
+        left: -2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+
+      .drugActions {
+        position: absolute;
+        right: -6rem;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+
+        svg {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media print {
+  .drugInfo {
+    background-color: white !important;
+    padding: 0 !important;
+  }
+
+  .drugTextPrint {
+    display: block !important;
+    position: static !important;
+    visibility: visible !important;
+    max-width: calc(100% - 10mm) !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    overflow: hidden !important;
+
+    &::first-line {
+      font-weight: bold;
+    }
+  }
+}

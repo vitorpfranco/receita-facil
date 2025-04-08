@@ -1,0 +1,78 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 3rem 1rem;
+    gap: 1rem;
+    background-color: white;
+    margin-bottom: 2px;
+    h2{
+        align-self: center;
+        letter-spacing: 1.8px;
+        font-weight: 600;
+        font-size: 2rem;
+    }
+
+    .gridContainer {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .formField {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+
+        input {
+            flex: 1;
+            text-decoration: none;
+            border: none;
+            background-color: #edeaea7f;
+            padding: 10px;
+
+            &:focus {
+                outline: none;
+                border: none;
+            }
+        }
+    }
+    
+}
+
+
+@media print {
+    .header {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        gap: 0rem;
+        align-items: flex-start;
+        width: 99%;
+        border-bottom: 1px solid black;
+        margin: 1mm 1mm 1mm 1mm;
+        h2 {
+            text-align: center;
+            width: 100%;
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+        }
+        .healthUnit{
+            height: 22px;
+            margin-left: 5px;
+        }
+        .gridContainer {
+            border-top: 1px solid black;
+            .formField {
+                &:first-child {
+                    padding-left: 5px;
+                }
+                &:last-child {
+                    padding-right: 5px;
+                }
+            }
+    }
+    }
+}

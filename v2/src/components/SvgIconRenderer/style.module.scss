@@ -1,0 +1,15 @@
+.iconImage {
+    height: 3rem;
+    object-fit: contain;
+    cursor: pointer;
+
+    &:hover {
+        outline: 1px solid rgba(0, 0, 0, 0.5);
+        color: rgba(255, 255, 255, 0.418)
+    }
+
+    svg {
+        height: 100%;
+        width: 100%;
+    }
+}

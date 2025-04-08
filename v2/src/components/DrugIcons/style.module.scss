@@ -1,0 +1,54 @@
+.drugIcons {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  height: 104px;
+  .drugIcon{
+    position: relative;
+    width: fit-content;
+    .svgIcon {
+        width: auto;
+        height: 104px;
+    
+        svg {
+          height: 100%;
+        }
+      }
+    &:hover {
+      .drugIconDeleteButton,.moveRight,.moveLeft {
+        display: flex;
+      }
+    }
+    img {
+        max-width: 100%;
+        max-height: 104px;
+        height: auto;
+        object-fit: contain;
+      }
+    .drugIconDeleteButton {
+      cursor: pointer;
+      display: none;
+      position: absolute;
+      top:  -16px;
+      right: -12px;
+    }
+    .moveIcon {
+      cursor: pointer;
+      display: none;
+      position: absolute;
+      bottom: 0;
+      background-color: white;
+      padding: 2px;
+      border-radius: 50%;
+      font-size: 20px;
+      border: 1px solid black;
+    }
+    .moveRight{
+      right: -10px;
+    }
+    .moveLeft {
+      left: -10px;
+    }
+  }
+}
+  

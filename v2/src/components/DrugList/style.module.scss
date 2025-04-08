@@ -1,0 +1,26 @@
+
+.collapsedContainer {
+  position: relative;
+  padding-left: 10px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 28px;
+    top: 8px;
+    width: 2px; 
+    height: calc(100% - 16px);
+    background-color: #707070;
+    opacity: 10%;
+  }     
+}
+
+.categoryIcon{
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  margin-right: 15px;
+  svg{
+    height: 25px;
+  }
+}

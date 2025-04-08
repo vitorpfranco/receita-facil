@@ -1,0 +1,72 @@
+.prescriptionPrintContainer {
+  display: flex;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .prescriptionPrint {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 2mm;
+  }
+
+  body {
+    min-width: fit-content;
+    height: fit-content;
+    overflow: auto;
+  }
+
+  .prescriptionPrint {
+    background-color: white;
+    margin:5mm;
+    width: 299mm;
+    min-height: fit-content;
+    page-break-after: always;
+    page-break-before: always;
+    page-break-inside: avoid;
+  }
+
+  .prescriptionPrintContainer {
+    visibility: visible;
+    position: relative;
+    width: fit-content;
+    &.duplicated {
+      gap: 5mm;
+      zoom: 0.707;
+      margin: 0mm 5mm ;
+      & .prescriptionPrint{
+        margin: 0;
+        margin-top: 3mm;
+        height: fit-content;
+        width: 253mm;
+      }
+    }
+  }
+
+  .prescriptionBody {
+    margin: 16px 10px 0px;
+    width: calc(100% - 20px);
+  }
+
+              @supports (-moz-appearance: none) {
+                .prescriptionPrintContainer {
+                    .prescriptionPrint {
+                      width: 205mm;
+                    }
+                    &.duplicated {
+                        .prescriptionPrint {
+                            width: 205.5mm;
+                            margin: 0;
+                            min-height: fit-content;
+                        }
+                    }
+                }
+    }
+}
